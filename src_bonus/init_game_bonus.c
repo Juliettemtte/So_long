@@ -6,7 +6,7 @@
 /*   By: jmouette <jmouette@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:50:23 by jmouette          #+#    #+#             */
-/*   Updated: 2024/07/26 13:01:29 by jmouette         ###   ########.fr       */
+/*   Updated: 2024/07/30 13:23:18 by jmouette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ static void	get_textures(t_game *game)
 	game->texture.collect = mlx_load_png("images/C.png");
 	game->texture.exit = mlx_load_png("images/E1.png");
 	game->texture.exit2 = mlx_load_png("images/E2.png");
-	game->texture.ennemi = mlx_load_png("images/EN.png");
+	game->texture.en1 = mlx_load_png("images/EN.png");
+	game->texture.en2 = mlx_load_png("images/EN2.png");
+	game->texture.en3 = mlx_load_png("images/EN3.png");
 }
 
 static void	get_images(t_game *game)
@@ -35,7 +37,10 @@ static void	get_images(t_game *game)
 	game->image.play_a = mlx_texture_to_image(game->mlx, game->texture.play_a);
 	game->image.exit = mlx_texture_to_image(game->mlx, game->texture.exit);
 	game->image.exit2 = mlx_texture_to_image(game->mlx, game->texture.exit2);
-	game->image.ennemi = mlx_texture_to_image(game->mlx, game->texture.ennemi);
+	game->image.ennemi = mlx_texture_to_image(game->mlx, game->texture.en1);
+	game->image.en1 = mlx_texture_to_image(game->mlx, game->texture.en1);
+	game->image.en2 = mlx_texture_to_image(game->mlx, game->texture.en2);
+	game->image.en3 = mlx_texture_to_image(game->mlx, game->texture.en3);
 	mlx_delete_texture(game->texture.floor);
 	mlx_delete_texture(game->texture.wall);
 	mlx_delete_texture(game->texture.collect);
@@ -43,7 +48,9 @@ static void	get_images(t_game *game)
 	mlx_delete_texture(game->texture.play_a);
 	mlx_delete_texture(game->texture.exit);
 	mlx_delete_texture(game->texture.exit2);
-	mlx_delete_texture(game->texture.ennemi);
+	mlx_delete_texture(game->texture.en1);
+	mlx_delete_texture(game->texture.en2);
+	mlx_delete_texture(game->texture.en3);
 }
 
 static void	size_window_init(t_game *game)
@@ -68,6 +75,7 @@ void	init_game(t_game *game)
 	game->mlx = mlx_init(game->img_w, game->img_h, "so_long", false);
 	game->moves = 0;
 	game->endgame = 0;
+	game->pos_enemies = 1;
 	get_textures(game);
 	get_images(game);
 	if (game->map_size.x > 4 && game->map_size.y > 4)

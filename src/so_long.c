@@ -6,7 +6,7 @@
 /*   By: jmouette <jmouette@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 13:14:32 by jmouette          #+#    #+#             */
-/*   Updated: 2024/07/30 11:09:08 by jmouette         ###   ########.fr       */
+/*   Updated: 2024/07/30 13:01:59 by jmouette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	main(int argc, char **argv)
 	t_game	game;
 
 	if (argc < 2)
-		ft_printf("Error\nNo map specified.");
+		ft_printf("Error\nNo map specified.\n");
 	else if (argc > 2)
-		ft_printf("Error\nToo many arguments.");
+		ft_printf("Error\nToo many arguments.\n");
 	else if (argc == 2 && map_name(argv[1]))
 	{
 		game.path = ft_strjoin("./maps/", argv[1]);

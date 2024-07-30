@@ -6,7 +6,7 @@
 /*   By: jmouette <jmouette@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 12:50:23 by jmouette          #+#    #+#             */
-/*   Updated: 2024/07/26 12:42:22 by jmouette         ###   ########.fr       */
+/*   Updated: 2024/07/30 12:05:48 by jmouette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static void	get_textures(t_game *game)
 	game->texture.floor = mlx_load_png("images/0.png");
 	game->texture.wall = mlx_load_png("images/1.png");
 	game->texture.play_d = mlx_load_png("images/PD.png");
-	game->texture.play_a = mlx_load_png("images/PA.png");
 	game->texture.collect = mlx_load_png("images/C.png");
 	game->texture.exit = mlx_load_png("images/E1.png");
 	game->texture.exit2 = mlx_load_png("images/E2.png");
@@ -31,14 +30,12 @@ static void	get_images(t_game *game)
 			game->texture.collect);
 	game->image.player = mlx_texture_to_image(game->mlx, game->texture.play_d);
 	game->image.play_d = mlx_texture_to_image(game->mlx, game->texture.play_d);
-	game->image.play_a = mlx_texture_to_image(game->mlx, game->texture.play_a);
 	game->image.exit = mlx_texture_to_image(game->mlx, game->texture.exit);
 	game->image.exit2 = mlx_texture_to_image(game->mlx, game->texture.exit2);
 	mlx_delete_texture(game->texture.floor);
 	mlx_delete_texture(game->texture.wall);
 	mlx_delete_texture(game->texture.collect);
 	mlx_delete_texture(game->texture.play_d);
-	mlx_delete_texture(game->texture.play_a);
 	mlx_delete_texture(game->texture.exit);
 	mlx_delete_texture(game->texture.exit2);
 }

@@ -6,7 +6,7 @@
 /*   By: jmouette <jmouette@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 13:15:08 by jmouette          #+#    #+#             */
-/*   Updated: 2024/07/30 11:04:47 by jmouette         ###   ########.fr       */
+/*   Updated: 2024/07/30 13:23:18 by jmouette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ typedef struct s_image
 	void	*exit;
 	void	*exit2;
 	void	*ennemi;
+	void	*en1;
+	void	*en2;
+	void	*en3;
 	void	*moves;
 	void	*end;
 	void	*end2;

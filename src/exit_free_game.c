@@ -6,7 +6,7 @@
 /*   By: jmouette <jmouette@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 11:07:48 by jmouette          #+#    #+#             */
-/*   Updated: 2024/07/30 11:26:50 by jmouette         ###   ########.fr       */
+/*   Updated: 2024/07/30 12:05:54 by jmouette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int	exit_game(t_game *game)
 	mlx_delete_image(game->mlx, game->image.wall);
 	mlx_delete_image(game->mlx, game->image.player);
 	mlx_delete_image(game->mlx, game->image.play_d);
-	mlx_delete_image(game->mlx, game->image.play_a);
 	mlx_delete_image(game->mlx, game->image.collect);
 	mlx_delete_image(game->mlx, game->image.exit);
 	mlx_delete_image(game->mlx, game->image.exit2);

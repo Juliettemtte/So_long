@@ -6,7 +6,7 @@
 /*   By: jmouette <jmouette@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 15:48:14 by jmouette          #+#    #+#             */
-/*   Updated: 2024/07/26 13:14:43 by jmouette         ###   ########.fr       */
+/*   Updated: 2024/07/30 13:23:18 by jmouette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static void	game_events(mlx_key_data_t keydata, void *param)
 				press_d(game);
 			else if (keydata.key == MLX_KEY_A || keydata.key == MLX_KEY_LEFT)
 				press_a(game);
+			else if (keydata.key == MLX_KEY_ESCAPE)
+				exit_game(game);
 		}
 		else if (keydata.key == MLX_KEY_ESCAPE)
 			exit_game(game);
@@ -37,7 +39,32 @@ static void	game_events(mlx_key_data_t keydata, void *param)
 		endgame(game);
 }
 
+void	animation(void *param)
+{
+	t_game	*game;
+
+	game = (t_game *)param;
+	if (game->loop < 10)
+	{
+		game->loop++;
+		return ;
+	}
+	game->loop = 0;
+	if (game->pos_enemies == 1)
+		game->image.ennemi = game->image.en1;
+	else if (game->pos_enemies == 2)
+		game->image.ennemi = game->image.en2;
+	else if (game->pos_enemies == 3)
+	{
+		game->image.ennemi = game->image.en3;
+		game->pos_enemies = 0;
+	}
+	draw_map(game);
+	game->pos_enemies++;
+}
+
 void	init_hooks(t_game *game)
 {
+	mlx_loop_hook(game->mlx, &animation, game);
 	mlx_key_hook(game->mlx, &game_events, game);
 }

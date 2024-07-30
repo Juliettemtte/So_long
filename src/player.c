@@ -6,7 +6,7 @@
 /*   By: jmouette <jmouette@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:07:36 by jmouette          #+#    #+#             */
-/*   Updated: 2024/07/25 12:28:04 by jmouette         ###   ########.fr       */
+/*   Updated: 2024/07/30 12:05:34 by jmouette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static void	draw(t_game *game, int y, int x)
 void	press_w(t_game *game)
 {
 	game->player.y -= 1;
-	game->image.player = game->image.play_d;
 	if (game->map[game->player.y][game->player.x] == EXIT
 			&& game->n_collect == 0)
 	{
@@ -46,7 +45,6 @@ void	press_w(t_game *game)
 void	press_s(t_game *game)
 {
 	game->player.y += 1;
-	game->image.player = game->image.play_a;
 	if (game->map[game->player.y][game->player.x] == EXIT
 			&& game->n_collect == 0)
 	{
@@ -68,7 +66,6 @@ void	press_s(t_game *game)
 void	press_d(t_game *game)
 {
 	game->player.x += 1;
-	game->image.player = game->image.play_d;
 	if (game->map[game->player.y][game->player.x] == EXIT
 			&& game->n_collect == 0)
 	{
@@ -90,7 +87,6 @@ void	press_d(t_game *game)
 void	press_a(t_game *game)
 {
 	game->player.x -= 1;
-	game->image.player = game->image.play_a;
 	if (game->map[game->player.y][game->player.x] == EXIT
 			&& game->n_collect == 0)
 	{
