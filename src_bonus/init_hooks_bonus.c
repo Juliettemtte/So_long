@@ -6,7 +6,7 @@
 /*   By: jmouette <jmouette@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 15:48:14 by jmouette          #+#    #+#             */
-/*   Updated: 2024/07/30 13:23:18 by jmouette         ###   ########.fr       */
+/*   Updated: 2024/07/30 13:25:23 by jmouette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	game_events(mlx_key_data_t keydata, void *param)
 		endgame(game);
 }
 
-void	animation(void *param)
+static void	animation(void *param)
 {
 	t_game	*game;
 
