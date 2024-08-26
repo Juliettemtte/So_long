@@ -54,7 +54,7 @@ static void	size_window_init(t_game *game)
 void	init_game(t_game *game)
 {
 	size_window_init(game);
-	game->mlx = mlx_init(game->img_w, game->img_h, "so_long", false);
+	game->mlx = mlx_init(game->img_w, game->img_h, "so_long", true);
 	game->moves = 0;
 	game->endgame = 0;
 	get_textures(game);
